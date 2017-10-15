@@ -1,0 +1,147 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900&subset=latin,greek);
+@import url(//fonts.googleapis.com/css?family=Roboto+Mono:400,100,300,500,700);
+@import url(//localhost/greekcoder.com/assets/fonts/myfont.css);
+
+/*
+ * BASE STYLES
+ *
+**/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+}
+
+.projects,
+.page-content-wrap,
+body,
+html,
+._site-header,
+._site-title {
+  @include transition(all 500ms);
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  background-color: #e3e3e3;
+}
+body {
+  overflow-x: hidden;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1c94c3;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  @include border-radius(1px);
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.clearb {
+  clear: both;
+}
+.center {
+  text-align: center;
+}
+/*FULLPAGE*/
+.page-content-wrap {
+  max-width: 1240px;
+  min-height: 100%;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 15px 10px;
+  z-index: 10;
+}
+/*RIPPLE EFFECT */
+@-webkit-keyframes ripple-animation {
+  0% {
+    -webkit-transform: scale(.01);
+    transform: scale(.01);
+  }
+
+  100% {
+    -webkit-transform: scale(5);
+    transform: scale(5);
+  }
+}
+
+@keyframes ripple-animation {
+  0% {
+    -webkit-transform: scale(.01);
+    transform: scale(.01);
+  }
+
+  100% {
+    -webkit-transform: scale(5);
+    transform: scale(5);
+  }
+}
+
+
+
+::selection {
+  background-color: #4285f4;
+  color: #fff;
+}
+.site-header {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.section {
+  background-color: #e3e3e3;
+  width: 100%;
+  display: block;
+}
+
+
+.tooltip{
+  display: inline;
+  position: relative;
+  &:hover:after {
+    content: attr(title);
+    position: absolute;
+    border-radius: 3px;
+    top: 2.2em;
+    left: -100%;
+    padding: 5px 15px;
+    width: auto;
+    white-space: nowrap;
+
+    background-color: #000;
+    opacity: .6;
+
+    font-size: 0.8rem;
+    color: #fff;
+    z-index: 98;
+
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+}
